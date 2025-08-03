@@ -1,0 +1,297 @@
+/* ========================================
+ * MODERN SIDEBAR LAYOUT - AI CHAT APP
+ * ========================================
+ * Professional sidebar layout with clean styling
+ * Author: Brian Letort
+ * Created: 2025
+ */
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+/* ========================================
+ * MAIN APP CONTAINER
+ * ========================================
+ */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f172a;
+}
+
+/* ========================================
+ * SIDEBAR STYLES
+ * ========================================
+ */
+.sidebar {
+  width: 280px;
+  background-color: #1e293b;
+  border-right: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid #334155;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+  border-radius: 8px;
+}
+
+.logo h2 {
+  color: #f8fafc;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.session-info {
+  margin-top: 16px;
+}
+
+.session-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #334155;
+  border-radius: 8px;
+  border: 1px solid #475569;
+}
+
+.session-icon {
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #10b981;
+  border-radius: 6px;
+}
+
+.session-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.session-title {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.session-id {
+  color: #94a3b8;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+}
+
+/* ========================================
+ * SIDEBAR NAVIGATION
+ * ========================================
+ */
+.sidebar-nav {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background-color: #334155;
+  color: #e2e8f0;
+}
+
+.nav-item.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-icon {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-text {
+  font-weight: 500;
+}
+
+/* ========================================
+ * SIDEBAR FOOTER
+ * ========================================
+ */
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #334155;
+  margin-top: auto;
+}
+
+.author-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.author-text {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.year {
+  color: #475569;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ========================================
+ * MAIN CONTENT AREA
+ * ========================================
+ */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #0f172a;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ========================================
+ * RESPONSIVE DESIGN
+ * ========================================
+ */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    width: 100%;
+  }
+}
+
+/* ========================================
+ * UTILITY CLASSES
+ * ========================================
+ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+ * ACCESSIBILITY AND FOCUS STYLES
+ * ========================================
+ */
+.nav-item:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ========================================
+ * DARK MODE ENHANCEMENTS
+ * ========================================
+ */
+@media (prefers-color-scheme: dark) {
+  .app {
+    background-color: #0f172a;
+  }
+  
+  .sidebar {
+    background-color: #1e293b;
+    border-right-color: #334155;
+  }
+  
+  .main-content {
+    background-color: #0f172a;
+  }
+} 

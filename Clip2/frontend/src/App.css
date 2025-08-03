@@ -1,0 +1,181 @@
+/* 
+ * App.css - Main Application Styles
+ * 
+ * This file contains the styling for the root App component and navigation.
+ * The design follows a clean, modern approach with tab-based navigation
+ * and responsive layout for educational purposes.
+ */
+
+/* ========================================
+   ROOT APP CONTAINER
+   ======================================== */
+
+.app {
+  /* Full viewport height and width */
+  min-height: 100vh;
+  width: 100%;
+  
+  /* Flexbox layout for navigation and content */
+  display: flex;
+  flex-direction: column;
+  
+  /* Subtle gradient background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* Ensure the app takes up the full screen */
+  box-sizing: border-box;
+}
+
+/* ========================================
+   NAVIGATION STYLES
+   ======================================== */
+
+.app-navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+}
+
+.app-title {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-tab {
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-tab:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+
+.app-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    min-height: auto;
+  }
+  
+  .app-title {
+    font-size: 20px;
+  }
+  
+  .nav-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-tab {
+    flex: 1;
+    max-width: 150px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .app-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 10px 15px;
+  }
+  
+  .app-title {
+    font-size: 18px;
+  }
+  
+  .nav-tab {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .app-content {
+    padding: 10px;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Hide elements on mobile */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Show elements only on mobile */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+} 
